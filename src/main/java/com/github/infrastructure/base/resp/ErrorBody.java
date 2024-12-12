@@ -106,10 +106,7 @@ public class ErrorBody {
                 new TreeMap<>());
     }
 
-    /**
-     * 收集异常堆栈信息
      */
-    private static String collectStackTrace(Throwable e) {
         try (StringWriter sw = new StringWriter(); PrintWriter pw = new PrintWriter(sw, true)) {
             e.printStackTrace(pw);
             return sw.toString();

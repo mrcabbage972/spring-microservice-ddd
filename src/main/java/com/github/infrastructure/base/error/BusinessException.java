@@ -34,7 +34,7 @@ public class BusinessException extends StateCodeException {
 
 
     public BusinessException(ResultCode resultCode, boolean writableStackTrace) {
-        this(resultCode.getCode(), resultCode.getMessage(), null, writableStackTrace);
+       this(resultCode.getCode(), resultCode.getMessage(), null, writableStackTrace);
     }
 
     public BusinessException(String code, String message, Serializable data, boolean writableStackTrace) {

@@ -61,6 +61,6 @@ public class StateCodeException extends RuntimeException {
     protected StateCodeException(String stateCode, String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.stateCode = stateCode;
-    }
+   }
 
 }

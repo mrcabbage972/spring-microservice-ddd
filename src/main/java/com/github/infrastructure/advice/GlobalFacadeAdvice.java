@@ -284,7 +284,7 @@ public class GlobalFacadeAdvice {
         e.printStackTrace();
         ErrorBody errorBody = ErrorBody.build(e);
         return RespBody.build(RespCode.SQL_EXCEPTION, errorBody);
-    }
+     }
 
 
     /**
