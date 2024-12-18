@@ -176,12 +176,10 @@ public class SpringEnvHelper implements ApplicationContextAware {
             appName = applicationContext.getId();
             return;
         }
-        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-        for (StackTraceElement stackTraceElement : stackTrace) {
-            if ("main".equals(stackTraceElement.getMethodName())) {
-                name = stackTraceElement.getFileName();
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+            if ("main".equals(element.getMethodName())) {
+                name = element.getFileName();
                 break;
-            }
         }
         if (name != null) {
             appName = name;

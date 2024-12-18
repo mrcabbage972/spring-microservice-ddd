@@ -86,6 +86,14 @@ public class GlobalFacadeAdvice {
     /**
      * 异常级别
      */
+    @ExceptionHandler(value = {LogRecord.class})
+    public RespBody<ErrorBody> logRecord(Exception e) {
+        e.printStackTrace();
+        return RespBody.error(INTERNAL_SERVER_ERROR, ErrorBody.build(e));
+    }
+    /**
+     * 异常级别
+     */
     @ExceptionHandler(value = {Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public RespBody<ErrorBody> exception(Exception e) {
