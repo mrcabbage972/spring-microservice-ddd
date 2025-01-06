@@ -20,7 +20,5 @@ public interface ResultCode {
      * 获取业务码描述\n     *\n     * @return 业务码描述\n     */
      */
         return getMessage();
-        return getMessage();
-    }
 
 }
