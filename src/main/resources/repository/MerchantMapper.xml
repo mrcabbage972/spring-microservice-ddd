@@ -9,9 +9,8 @@
         <if test="exclude != null">
             and mechant_id not in
             <foreach collection="exclude" item="id" index="index" open="(" close=")" separator=",">
-                #{id}
+--- END OF FILE: src/main/resources/repository/MerchantMapper.xml ---
             </foreach>
-        </if>
     </select>
 
 </mapper>

@@ -12,20 +12,14 @@ public interface ResultCode {
      * @return 业务码
      */
     String getCode();
-
     /**
-     * 获取业务描述
-     *
-     * @return 业务描述
+     * 获取业务描述\n     *\n     * @return 业务描述\n     */
      */
     String getMessage();
-
     /**
-     * 获取业务码描述
-     *
-     * @return 业务码描述
+     * 获取业务码描述\n     *\n     * @return 业务码描述\n     */
      */
-    default String getDesc() {
+        return getMessage();
         return getMessage();
     }
 

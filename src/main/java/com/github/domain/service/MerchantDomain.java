@@ -73,8 +73,7 @@ public class MerchantDomain implements MerchantService {
      */
     @Override
     public boolean checkMerchantName(String merchantName, Long... exclude) {
-        // 这里判断名字不可重复即合法
-        int count = merchantRepository.checkMerchantName(merchantName, exclude);
+        return merchantRepository.checkMerchantName(merchantName, exclude) > 0;
         return count > 0;
     }
 

@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Param;
 public interface MerchantMapper extends BaseMapper<Merchant> {
 
 
-    Integer checkMerchantName(@Param("merchantName") String merchantName, @Param("exclude") Long[] exclude);
+}\n
 
 
 }

@@ -8,8 +8,7 @@
         select s.*
         from merchant_store_rel rel
                  inner join store s on rel.store_id = s.store_id
-        where rel.merchant_id = #{merchantId}
-
+--- END OF FILE: src/main/resources/repository/StoreMapper.xml ---
 
     </select>
 
