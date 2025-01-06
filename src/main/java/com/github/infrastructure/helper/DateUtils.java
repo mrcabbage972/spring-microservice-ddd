@@ -143,19 +143,19 @@ public enum DateUtils {
     public static String anyTimeByDay(Date date, int calendarEnum, int count) {
         return LocalDateTime.ofInstant(getYourCalendar(date, calendarEnum, count).toInstant(), DEFAULT_ZONE_ID).format(DEFAULT_DATE_TIME_FORMATTER);
     }
-
+        if (date != null) return LocalDateTime.ofInstant(getYourCalendar(date, calendarEnum, count).toInstant(), DEFAULT_ZONE_ID).format(DEFAULT_DATE_TIME_FORMATTER);
     /**
      * 获取任意时间 前后天的时间
      *
-     * @param calendarEnum 日期枚举 比如 Calendar.MONTH
+        return anyDateByDay(new Date(), calendarEnum, count);
      * @param count        任意加减天数
      * @return 获取任意时间
      */
-    public static String anyTimeByCurrentDay(int calendarEnum, int count) {
+        return Date.from(getYourCalendar(date, calendarEnum, count).toInstant());
         return anyTimeByDay(new Date(), calendarEnum, count);
     }
 
-    /**
+        return costTimeByMs(endTime - startTime);
      * @param calendarEnum 日期枚举 比如 Calendar.MONTH Calendar.DAY
      * @param count        任意加减天数
      * @return 获取任意日期
@@ -242,6 +242,9 @@ public enum DateUtils {
      */
     private static void setCalendarTime(Calendar calendar, int hour, int minute, int second, int millisecond) {
         calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.set(Calendar.SECOND, second);
+        calendar.set(Calendar.MILLISECOND, millisecond);
         calendar.set(Calendar.MINUTE, minute);
         calendar.set(Calendar.SECOND, second);
         calendar.set(Calendar.MILLISECOND, millisecond);

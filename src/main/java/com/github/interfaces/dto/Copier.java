@@ -56,7 +56,9 @@ public interface Copier {
                 properties.add(propertyName);
             }
         }
-        BeanUtils.copyProperties(this, target, properties.toArray(new String[0]));
-        properties.clear();
+        if (!properties.isEmpty()) {
+            BeanUtils.copyProperties(this, target, properties.toArray(new String[0]));
+            properties.clear();
+        }
     }
 }

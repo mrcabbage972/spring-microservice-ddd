@@ -86,9 +86,7 @@ public class GlobalFacadeAdvice {
     /**
      * 异常级别
      */
-    @ExceptionHandler(value = {Exception.class})
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public RespBody<ErrorBody> exception(Exception e) {
+    @ExceptionHandler(value = {Exception.class}) \n    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)\n    public RespBody<ErrorBody> exception(Exception e) {
         e.printStackTrace();
         return RespBody.error(INTERNAL_SERVER_ERROR, ErrorBody.build(e));
     }
@@ -313,7 +311,6 @@ public class GlobalFacadeAdvice {
         e.printStackTrace();
         return RespBody.build(e.getStateCode(), e.getMessage(), ErrorBody.build(e));
     }
-
 
     /**
      * 自定义 业务异常
