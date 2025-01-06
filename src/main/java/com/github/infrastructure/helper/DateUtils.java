@@ -142,20 +142,17 @@ public enum DateUtils {
      */
     public static String anyTimeByDay(Date date, int calendarEnum, int count) {
         return LocalDateTime.ofInstant(getYourCalendar(date, calendarEnum, count).toInstant(), DEFAULT_ZONE_ID).format(DEFAULT_DATE_TIME_FORMATTER);
-    }
-        if (date != null) return LocalDateTime.ofInstant(getYourCalendar(date, calendarEnum, count).toInstant(), DEFAULT_ZONE_ID).format(DEFAULT_DATE_TIME_FORMATTER);
-    /**
-     * 获取任意时间 前后天的时间
-     *
-        return anyDateByDay(new Date(), calendarEnum, count);
-     * @param count        任意加减天数
-     * @return 获取任意时间
-     */
-        return Date.from(getYourCalendar(date, calendarEnum, count).toInstant());
-        return anyTimeByDay(new Date(), calendarEnum, count);
-    }
+     }
+     /**
+      * 获取任意时间 前后天的时间
+      *
+      * @param count        任意加减天数
+      * @return 获取任意时间
+      */
+     public static Date anyDateByDay(Date date, int calendarEnum, int count) {
+         return Date.from(getYourCalendar(date, calendarEnum, count).toInstant());
+     }
 
-        return costTimeByMs(endTime - startTime);
      * @param calendarEnum 日期枚举 比如 Calendar.MONTH Calendar.DAY
      * @param count        任意加减天数
      * @return 获取任意日期
@@ -170,9 +167,6 @@ public enum DateUtils {
      * @return 获取任意日期
      */
     public static Date anyDateByDay(Date date, int calendarEnum, int count) {
-        return Date.from(getYourCalendar(date, calendarEnum, count).toInstant());
-    }
-
     /**
      * @param costTime 消耗的毫秒数
      * @return 将毫秒数换算成消耗的时间 如 : 90061001 换算成 1day 1hour 1min 1second 1ms
