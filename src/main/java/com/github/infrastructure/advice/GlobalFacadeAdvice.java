@@ -86,9 +86,11 @@ public class GlobalFacadeAdvice {
     /**
      * 异常级别
      */
-    @ExceptionHandler(value = {Exception.class}) \n    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)\n    public RespBody<ErrorBody> exception(Exception e) {
-        e.printStackTrace();
-        return RespBody.error(INTERNAL_SERVER_ERROR, ErrorBody.build(e));
+    @ExceptionHandler(value = {Exception.class})
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public RespBody<ErrorBody> exception(Exception e) {
+        logger.error("global exception:", e);
+        return RespBody.error(ErrorBody.error(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage()));
     }
 
     /**
